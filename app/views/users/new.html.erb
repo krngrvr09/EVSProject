@@ -1,0 +1,25 @@
+<% provide(:title, 'Sign up') %>
+<h1 class="sign_up_labels">Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: @user %>
+      <%= f.label :name, class: "sign_up_labels" %>
+      <%= f.text_field :name, class: "sign_up_fields" %>
+
+      <%= f.label :email, class: "sign_up_labels" %>
+      <%= f.text_field :email, class: "sign_up_fields" %>
+
+      <%= f.label :password, class: "sign_up_labels" %>
+      <%= f.password_field :password, class: "sign_up_fields" %>
+
+      <%= f.label :password_confirmation, "Confirmation", class: "sign_up_labels" %>
+      <%= f.password_field :password_confirmation, class: "sign_up_fields" %>
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary", id: "create_account" %>
+    <% end %>
+  </div>
+</div>
+  <script>document.body.style.backgroundImage="url('/assets/dark_forest.jpg')";
+  </script>
