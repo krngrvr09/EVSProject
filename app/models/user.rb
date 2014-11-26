@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
 
-  #before_save { |user| user.email = user.email.downcase }
+  before_save { |user| user.email = user.email.downcase }
   before_save :create_remember_token
 
   #validates :name,  presence: true, length: { maximum: 50 }
@@ -47,18 +47,18 @@ class User < ActiveRecord::Base
     Micropost.from_users_followed_by(self)
   end
 
-  def self.from_omniauth(auth)
+  # def self.from_omniauth(auth)
 
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.token
-      user.password = "sahilshekhawat"
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      user.save!
-    end
-  end
+  #   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+  #     user.provider = auth.provider
+  #     user.uid = auth.uid
+  #     user.name = auth.info.name
+  #     user.oauth_token = auth.credentials.token
+  #     user.password = "sahilshekhawat"
+  #     user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+  #     user.save!
+  #   end
+  # end
 
 
   private
