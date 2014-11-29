@@ -1,0 +1,2 @@
+module UpvoteRelationshipsHelper
+end

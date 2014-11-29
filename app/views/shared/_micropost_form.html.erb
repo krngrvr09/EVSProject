@@ -1,5 +1,6 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: @micropost %>
+  <%= f.hidden_field :number_of_upvotes, :value => 0%>
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new post...", id: "post_text" %>
   </div>

@@ -1,5 +1,4 @@
 <li id="<%= feed_item.id %>">
-  <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   <span class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
   </span>
@@ -12,4 +11,23 @@
                                      confirm: "You sure?",
                                      title: feed_item.content %>
   <% end %>
+  Number of Upvotes: <%=feed_item.number_of_upvotes%>
+  <%=feed_item.user.id%>llklklk<%=feed_item.id%>
+  <% if not UpvoteRelationship.where(:user_id =>feed_item.user.id, :micropost_id => feed_item.id).first.eql? nil %>
+  no nil
+  <%=UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status%>
+    <% if UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status.eql? -1 %>
+    time to upvote
+      Up
+      <td><%= button_to '+1', vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id), method: :post %></td>
+    <%else%>
+    time to downvote
+      Down
+      <td><%= button_to '-1', vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id), method: :post %></td>
+    <%end%> 
+  <%else%>
+      <td><%= button_to '+1', vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id), method: :post %></td>
+      <td><%= button_to '-1', vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id), method: :post %></td>
+  
+  <%end%>
 </li>
