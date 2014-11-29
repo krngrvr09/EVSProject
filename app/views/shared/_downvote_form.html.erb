@@ -1,0 +1,3 @@
+<%= form_for(:microposts,:url => {:controller => :microposts, :action => :downvote}) do |f| %>
+  <%= f.submit "Downvote", class: "btn btn-large btn-primary" %>
+<% end %>

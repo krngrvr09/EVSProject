@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @upvote_relationship.user_id %>
+</p>
+
+<p>
+  <b>Micropost:</b>
+  <%= @upvote_relationship.micropost_id %>
+</p>
+
+<p>
+  <b>Upvote status:</b>
+  <%= @upvote_relationship.upvote_status %>
+</p>
+
+
+<%= link_to 'Edit', edit_upvote_relationship_path(@upvote_relationship) %> |
+<%= link_to 'Back', upvote_relationships_path %>

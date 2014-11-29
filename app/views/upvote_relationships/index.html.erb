@@ -1,0 +1,27 @@
+<h1>Listing upvote_relationships</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Micropost</th>
+    <th>Upvote status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @upvote_relationships.each do |upvote_relationship| %>
+  <tr>
+    <td><%= upvote_relationship.user_id %></td>
+    <td><%= upvote_relationship.micropost_id %></td>
+    <td><%= upvote_relationship.upvote_status %></td>
+    <td><%= link_to 'Show', upvote_relationship %></td>
+    <td><%= link_to 'Edit', edit_upvote_relationship_path(upvote_relationship) %></td>
+    <td><%= link_to 'Destroy', upvote_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Upvote relationship', new_upvote_relationship_path %>
