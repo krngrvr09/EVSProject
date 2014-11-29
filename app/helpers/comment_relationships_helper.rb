@@ -1,0 +1,2 @@
+module CommentRelationshipsHelper
+end

@@ -21,6 +21,12 @@ class MicropostsController < ApplicationController
     redirect_to root_path
     
   end
+
+  def comment
+    redirect_to root_path
+    
+  end
+
   
   
   def downvote
