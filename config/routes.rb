@@ -1,4 +1,10 @@
 SampleApp::Application.routes.draw do
+  resources :comment_relationships
+
+
+  resources :comments
+
+
   resources :upvote_relationships
 
   resources :users do

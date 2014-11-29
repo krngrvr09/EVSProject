@@ -34,4 +34,11 @@
   		<td><%= button_to '-1', vote_micropost_path(micropost,:micropost_id => micropost.id), method: :post %></td>
   
   <%end%>
+  <% CommentRelationship.where(:micropost_id=> micropost.id).each do |c|%>
+  <%if not c.comment_id.eql? nil %>
+  <ul><%= Comment.find(c.comment_id).body %></ul>
+   <%end%>
+  <%end%>
+
+  <%= render 'shared/comment_form', micropost_id: micropost.id %>
 </li>

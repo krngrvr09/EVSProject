@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Micropost:</b>
+  <%= @comment_relationship.micropost_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @comment_relationship.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_relationship_path(@comment_relationship) %> |
+<%= link_to 'Back', comment_relationships_path %>
