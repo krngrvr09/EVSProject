@@ -41,9 +41,12 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-
     respond_to do |format|
       if @comment.save
+        micropost_id = params[:comment][:micropost_id]
+    c=CommentRelationship.new(:micropost_id => micropost_id, :user_id => current_user.id, :comment_id => @comment.id)
+    c.save!
+    
         redirect_to current_user
       else
         format.html { render action: "new" }
