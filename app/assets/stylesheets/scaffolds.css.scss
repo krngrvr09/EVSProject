@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #f0f0f0;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -43,6 +43,24 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+}
+#upvote{
+  width: 20px;
+  border : 200px solid black;
+  padding: 500px;
+  padding-bottom: 0;
+   margin-bottom: 2px;
+  background-color: #00FFFF;
+
+}
+#downvote{
+  width: 200px;
+  border : 200px solid black;
+  padding: 500px;
+  padding-bottom: 0;
+   margin-bottom: 2px;
+  background-color: #00FFFF;
+
 }
 
 #error_explanation {
