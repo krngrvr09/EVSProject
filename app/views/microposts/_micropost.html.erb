@@ -15,8 +15,8 @@
                                      confirm: "You sure?",
                                      title: micropost.content %>
   <% end %>
-  Number of Upvotes: <%=micropost.number_of_upvotes%>
-  <%=current_user.id%>llklklk<%=micropost.id%>
+   No of upvotes :<%=micropost.number_of_upvotes%>
+  <!--<%=current_user.id%><%=micropost.id%>-->
   <% if not UpvoteRelationship.where(:user_id =>current_user.id, :micropost_id => micropost.id).first.eql? nil %>
   no nil
   <%=UpvoteRelationship.where(:micropost_id => micropost.id, :user_id => current_user.id).first.upvote_status%>
