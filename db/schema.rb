@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141129201110) do
+ActiveRecord::Schema.define(:version => 20141201003842) do
 
   create_table "comment_relationships", :force => true do |t|
     t.integer  "micropost_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20141129201110) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "tab_id"
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
@@ -52,6 +53,12 @@ ActiveRecord::Schema.define(:version => 20141129201110) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
+  create_table "tabs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "upvote_relationships", :force => true do |t|
     t.integer  "user_id"

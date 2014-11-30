@@ -17,12 +17,14 @@
         Signed in as <strong><%= current_user.name %></strong>!
         <%= link_to "Sign out", signout_path, id: "sign_out" %>
       <% else %>
-        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %><br>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %><br>
-        <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %><br>
+        <%= link_to image_tag('/assets/google.png'), "/auth/google_oauth2", id: "sign_in" %>
+        
+        <%= link_to image_tag('/assets/facebook.jpeg'), "/auth/facebook", id: "sign_in" %>
+
+        <%= link_to image_tag('/assets/twitter.png'), "/auth/twitter", id: "sign_in" %>
       <% end %>
 
   </div>
 </div>
-  <script>document.body.style.backgroundImage="url('/assets/dark_forest.jpg')";
+  <script>document.body.style.backgroundImage="url('/assets/blurred-autumn-1920x1080.jpg')";
   </script>

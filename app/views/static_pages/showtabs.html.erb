@@ -13,13 +13,11 @@
     </aside>
 <%= link_to "Tags", tabs_path, :class => "button"  %>
     <div class="span8">
-      
-      <h3> <font color = "white"> Feed </font></h3>
-    
+      <h3>Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
-    <script>document.body.style.backgroundImage="url('/assets/blurred-water-waves-1920x1080.jpg')";
+    <script>document.body.style.backgroundImage="url('/assets/white1.png')";
   </script>
 
 <% else %>
@@ -28,21 +26,7 @@
     
     <%= link_to "Sign Up", signup_path, id: "sign_up" %>
   </div>
-  <script>document.body.style.backgroundImage="url('/assets/fantastic-blurred-wallpaper-36388-37216-hd-wallpapers.jpg')";
-
+  <script>document.body.style.backgroundImage="url('/assets/dark_forest.jpg')";
   </script>
-<p>
-  <br> </br>
-  <br> </br>
-  <br> </br>
-  <br> </br>
-  <br> </br>
-  <font color ="white"> 
-  <b>
-    <h2>
-  Be a part of the change! 
-    </h2>
-  <b>
-  </font>
-  </p>
+
 <% end %>
