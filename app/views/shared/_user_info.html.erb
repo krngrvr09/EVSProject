@@ -1,5 +1,5 @@
 <a href="<%= user_path(current_user) %>">
 </a>
 <h1><%= current_user.name %></h1>
-<span><%= link_to "view my profile", current_user %></span>
+<span><%= link_to "view my profile", current_user, :class => "button", :style => 'color: white; font-weight=400' %></span>
 <span><%= pluralize(current_user.microposts.count, "micropost") %></span>

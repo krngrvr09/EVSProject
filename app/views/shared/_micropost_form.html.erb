@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: @micropost %>
   <%= f.hidden_field :number_of_upvotes, :value => 0%>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new post...", id: "post_text" %>
+    <%= f.text_area :content, placeholder: "Share your thoughts...", id: "post_text" %>
   </div>
   <%= f.file_field :photo %>
   <%= collection_select(:micropost, :tab_id, @tabs, :id, :name, {:prompt => true})%>

@@ -1,8 +1,8 @@
-<h1>Listing tabs</h1>
+<h1><font color ="white"> Listing Tabs </font></h1>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th><font color ="white" size ="6"> Name </font></th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,15 +10,17 @@
 
 <% @tabs.each do |tab| %>
   <tr>
-    <td><%= link_to tab.name, 'http://localhost:3000/tab/'+tab.name %></td>
-    <td><%= link_to 'Show', tab %></td>
-    <td><%= link_to 'Edit', edit_tab_path(tab) %></td>
+    <td><%= link_to tab.name, 'http://localhost:3000/tab/'+tab.name, :class => "button", :style=> 'color: white;font-weight:800;font-size:22px' %></td>
+    <td><%= link_to 'Show', tab, :class => "button", :style => 'margin-left:50px;color: white;' %></td>
+    <td><%= link_to 'Edit', edit_tab_path(tab), :class => "button", :style => 'margin-left:50px;color: white;' %></td>
 
-    <td><%= link_to 'Destroy', tab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', tab, :class => "button", :style=> 'color: white;margin-left:50px;',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tab', new_tab_path %>
+<%= link_to 'New Tab', new_tab_path,:class => "button", :style=> 'color: white; font-size:16px;font-weight:800;' %>
+<script>document.body.style.backgroundImage="url('/assets/blurred-water-waves-1920x1080.jpg')";
+  </script>
