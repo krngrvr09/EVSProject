@@ -30,22 +30,22 @@
     <% if UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status.eql? -1 %>
     
       
-      <td><%=link_to image_tag('/assets/up.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :id => 'upvote' , :item_user_id => feed_item.user.id), method: :post %></td> 
+      <td><%=link_to image_tag('/assets/up.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :id => 'upvote' , :item_user_id => feed_item.user.id),:style=>'position: relative;top: 15px;right: 8px;', method: :post %></td> 
 
-      <%=UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status%>
+      <p style="position: relative;top:-20px;right:-220px"><%=UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status%></p>
       
     
     <%else%>
     
-      <td><%= link_to image_tag('/assets/down.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :id => 'downvote' , :item_user_id => feed_item.user.id), method: :post %></td>
+      <td><%= link_to image_tag('/assets/down.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :id => 'downvote' , :item_user_id => feed_item.user.id),:style=>'position: relative;top: 15px;right: 8px;', method: :post %></td>
 
-     <%=UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status%>
+     <p style="position: relative;top:-20px;right:-220px"><%=UpvoteRelationship.where(:micropost_id => feed_item.id, :user_id => feed_item.user.id).first.upvote_status%></p>
 
     <%end%> 
   <%else%>
-      <td><%= link_to image_tag('/assets/up.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id), method: :post %></td>
-      <%=feed_item.number_of_upvotes%>
-      <td><%= link_to image_tag('/assets/down.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id), method: :post %></td>
+      <td><%= link_to image_tag('/assets/up.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id),:style=>'position: relative;top: 15px;right: 8px;', method: :post %></td>
+      <b style ="position: relative; top:0px; left:-8px;"><%=feed_item.number_of_upvotes%></b>
+      <td><%= link_to image_tag('/assets/down.png' ,:width => '35px',:height => '100px'), vote_micropost_path(feed_item,:micropost_id => feed_item.id, :item_user_id => feed_item.user.id),:style=>'position: relative;top: 15px;right: 8px;', method: :post %></td>
   
   <%end%>
 </li>
