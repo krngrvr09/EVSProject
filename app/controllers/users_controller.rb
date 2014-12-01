@@ -22,8 +22,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      sign_in @user
-      flash[:success] = "Welcome to the Change Heroes!"
+      #sign_in @user
+      redirect_to root_path
+      flash[:success] = "You are successfully registered. You can now proceed via Sign in Button!"
       #
     else
       render 'new'
